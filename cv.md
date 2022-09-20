@@ -14,7 +14,37 @@ I am a student and simultaneously studying web development, which is the main go
 * All ADOBE products (+Figma)
 
 # Code example (operations with the local database. С++. STL)
+```
+void findName(vector <GraphicsCard> GC, vector <Ceh_CoolingSystem> cCoolingSystem, vector <Ceh_PowerSystem> cPowerSystem, vector <Ceh_Microchip> cMicrochip, vector <Ceh_GPU> cGPU) {
+	string dev;
+	cout << "Название продукта завода:\n\n";
+	getline(cin, dev);
+	getline(cin, dev);
 
+	int number = -1;
+
+	for (int i = 0; i < GC.size(); i++)
+	{
+		if (dev == GC[i].get_name_GraphicsCard_()) {
+			number = i;
+		}
+	}
+
+	if (number == -1) {
+		cout << "\nДанной видеокарты нет в базе данных" << endl;
+	}
+	else {
+		for (int i = 0; i < cCoolingSystem.size(); i++) {
+			if (GC[number].get_rotationSpeed_GraphicsCard_() == cCoolingSystem[i].get_rotationSpeed()) {
+				//ДЕТАЛЬ 1
+				cout << "\nДеталь №1:\n";
+				cout << "Название детали:\t" << cCoolingSystem[i].get_name_CoolingSystem() << "\n";
+				cout << "Скорость вращения:\t" << cCoolingSystem[i].get_rotationSpeed() << " об/мин" << "\n";
+				cout << "Уровень шума:\t" << cCoolingSystem[i].get_noiseLevel() << " дБ" << "\n\n";
+			}
+		}
+	}
+```
 # Education
 * BSU student (Computer Science and Design)
 
